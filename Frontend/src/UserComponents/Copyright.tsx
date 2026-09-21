@@ -1,5 +1,3 @@
-import React from "react";
-
 const Copyright = () => {
   return (
     <div className="border-t border-gray-200 bg-gray-50">

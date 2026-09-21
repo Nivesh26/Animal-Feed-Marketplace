@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "Products", href: "#" },
-  { label: "Categories", href: "#" },
-  { label: "About Us", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "Home", href: "/" },
+  { label: "Products", href: "/products" },
+  { label: "Categories", href: "/categories" },
+  { label: "About Us", href: "/aboutus" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/" || location.pathname === "";
 
   // Lock body scroll when mobile drawer is open
   useEffect(() => {
@@ -36,31 +39,46 @@ const Header = () => {
           <div className="flex items-center h-14 sm:h-16 lg:h-20 gap-2 sm:gap-4">
 
             {/* Left: Logo */}
-            <a href="#" className="flex-shrink-0" onClick={closeMenu}>
+            <Link to="/" className="flex-shrink-0" onClick={closeMenu}>
               <img
                 src={Logo}
                 alt="PetFeed"
                 className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
               />
-            </a>
+            </Link>
 
             {/* Center: Desktop Nav */}
             <nav
               className="hidden lg:flex items-center gap-6 xl:gap-8 flex-1 justify-center"
               aria-label="Main navigation"
             >
-              {navLinks.map(({ label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="relative group text-sm font-medium text-gray-600 transition-colors duration-200" style={{"--hover-color":"#2563a8"} as React.CSSProperties}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.color='#2563a8'}
-                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.color=''}
-                >
-                  {label}
-                  <span className="absolute -bottom-0.5 left-0 h-[2px] w-0 rounded-full group-hover:w-full transition-all duration-300" style={{backgroundColor:'#2563a8'}} />
-                </a>
-              ))}
+              {navLinks.map(({ label, href }) => {
+                const isActive = label === "Home" ? isHome : location.pathname === href;
+                return (
+                  <Link
+                    key={label}
+                    to={href}
+                    className="relative group text-sm font-medium transition-colors duration-200"
+                    style={{ color: isActive ? '#2563a8' : undefined }}
+                    onMouseEnter={e => {
+                      (e.currentTarget as HTMLElement).style.color = '#2563a8';
+                    }}
+                    onMouseLeave={e => {
+                      (e.currentTarget as HTMLElement).style.color = isActive ? '#2563a8' : '';
+                    }}
+                  >
+                    <span className={isActive ? "text-[#2563a8] font-semibold" : "text-gray-600 group-hover:text-[#2563a8]"}>
+                      {label}
+                    </span>
+                    <span
+                      className={`absolute -bottom-0.5 left-0 h-[2px] rounded-full transition-all duration-300 ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                      style={{ backgroundColor: '#2563a8' }}
+                    />
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Right: Search + Login (desktop) + Hamburger (mobile) */}
@@ -85,16 +103,16 @@ const Header = () => {
               </div>
 
               {/* Login — hidden on mobile, visible on sm+ */}
-              <a
+              <Link
+                to="/login"
                 id="login-btn"
-                href="#login"
                 className="hidden sm:inline-flex flex-shrink-0 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-white text-xs sm:text-sm font-medium transition-colors"
                 style={{backgroundColor:'#2563a8'}}
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.backgroundColor='#1d4e8f'}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.backgroundColor='#2563a8'}
               >
                 Login
-              </a>
+              </Link>
 
               {/* Hamburger — mobile only, on the right */}
               <button
@@ -180,27 +198,38 @@ const Header = () => {
 
             {/* Mobile Nav Links */}
             <nav className="flex flex-col gap-0.5" aria-label="Mobile navigation">
-              {navLinks.map(({ label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  onClick={closeMenu}
-                  className="flex items-center justify-between px-3 py-2.5 mb-0.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 transition-colors"
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.color='#2563a8'}
-                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.color=''}
-                >
-                  {label}
-                  <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              ))}
+              {navLinks.map(({ label, href }) => {
+                const isActive = label === "Home" ? isHome : location.pathname === href;
+                return (
+                  <Link
+                    key={label}
+                    to={href}
+                    onClick={closeMenu}
+                    className={`flex items-center justify-between px-3 py-2.5 mb-0.5 rounded-lg text-sm font-medium transition-colors ${
+                      isActive ? "bg-blue-50 text-[#2563a8] font-semibold" : "text-gray-700 hover:bg-blue-50"
+                    }`}
+                    style={{ color: isActive ? '#2563a8' : undefined }}
+                    onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#2563a8')}
+                    onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = isActive ? '#2563a8' : '')}
+                  >
+                    <span>{label}</span>
+                    <svg
+                      className={`w-4 h-4 ${isActive ? "text-[#2563a8]" : "text-gray-300"}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Mobile Login */}
-            <a
+            <Link
+              to="/login"
               id="mobile-login-btn"
-              href="#login"
               onClick={closeMenu}
               className="mt-auto pt-4 inline-block w-full text-center px-6 py-2.5 rounded-full text-white text-sm font-medium transition-colors"
               style={{backgroundColor:'#2563a8'}}
@@ -208,7 +237,7 @@ const Header = () => {
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.backgroundColor='#2563a8'}
             >
               Login
-            </a>
+            </Link>
           </div>
         </div>
       </aside>

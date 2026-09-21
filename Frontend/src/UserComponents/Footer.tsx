@@ -1,12 +1,13 @@
-import React from "react";
+import type { MouseEvent } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 
 const quickLinks = [
-  { label: "Home", href: "#" },
-  { label: "Products", href: "#" },
-  { label: "Categories", href: "#" },
-  { label: "About Us", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "Home", href: "/" },
+  { label: "Products", href: "/products" },
+  { label: "Categories", href: "/categories" },
+  { label: "About Us", href: "/aboutus" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const categories = [
@@ -25,14 +26,14 @@ const support = [
   { label: "Terms of Service", href: "#" },
 ];
 
-const socialHover = (e: React.MouseEvent<HTMLAnchorElement>, enter: boolean) => {
+const socialHover = (e: MouseEvent<HTMLElement>, enter: boolean) => {
   const el = e.currentTarget as HTMLElement;
   el.style.backgroundColor = enter ? "#2563a8" : "";
   el.style.borderColor = enter ? "#2563a8" : "";
   el.style.color = enter ? "#fff" : "";
 };
 
-const linkHover = (e: React.MouseEvent<HTMLAnchorElement>, enter: boolean) => {
+const linkHover = (e: MouseEvent<HTMLElement>, enter: boolean) => {
   (e.currentTarget as HTMLElement).style.color = enter ? "#2563a8" : "";
 };
 
@@ -44,7 +45,9 @@ const Footer = () => {
 
           {/* ── Brand ── */}
           <div className="flex flex-col gap-4">
-            <img src={Logo} alt="PetFeed" className="h-16 w-auto object-contain object-left" />
+            <Link to="/" className="inline-block w-fit">
+              <img src={Logo} alt="PetFeed" className="h-16 w-auto object-contain object-left" />
+            </Link>
             <p className="text-sm text-gray-500 leading-relaxed">
               Premium nutrition for every pet. Quality animal feed delivered right to your doorstep.
             </p>
@@ -76,10 +79,10 @@ const Footer = () => {
             <ul className="flex flex-col gap-3">
               {quickLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <a href={href} className="text-sm text-gray-500 transition-colors duration-150"
+                  <Link to={href} className="text-sm text-gray-500 transition-colors duration-150"
                     onMouseEnter={e => linkHover(e, true)} onMouseLeave={e => linkHover(e, false)}>
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

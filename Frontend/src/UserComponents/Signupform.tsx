@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HiEye, HiEyeSlash } from "react-icons/hi2";
 import { z } from "zod";
 import GoogleIcon from "../assets/Google.png";
@@ -39,6 +39,7 @@ const signupSchema = z
 type SignupField = "fullName" | "email" | "phone" | "password" | "confirmPassword";
 
 const Signupform = () => {
+    const navigate = useNavigate();
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -84,7 +85,9 @@ const Signupform = () => {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        validate();
+        if (validate()) {
+            navigate("/login");
+        }
     };
 
     const inputBorder = (hasError: boolean) =>

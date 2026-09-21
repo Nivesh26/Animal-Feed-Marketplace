@@ -1,5 +1,6 @@
 import type { MouseEvent } from "react";
 import { Link } from "react-router-dom";
+import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import Logo from "../assets/Logo.png";
 
 const quickLinks = [
@@ -53,10 +54,10 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-2 pt-1">
               {[
-                { label: "Facebook", icon: <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />, fill: true },
-                { label: "Instagram", icon: <><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" /></>, fill: false },
-                { label: "Twitter", icon: <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />, fill: true },
-              ].map(({ label, icon, fill }) => (
+                { label: "Facebook", icon: <FaFacebookF className="w-3.5 h-3.5" /> },
+                { label: "Instagram", icon: <FaInstagram className="w-3.5 h-3.5" /> },
+                { label: "X", icon: <FaXTwitter className="w-3.5 h-3.5" /> },
+              ].map(({ label, icon }) => (
                 <a
                   key={label}
                   href="#"
@@ -65,9 +66,7 @@ const Footer = () => {
                   onMouseEnter={e => socialHover(e, true)}
                   onMouseLeave={e => socialHover(e, false)}
                 >
-                  <svg className="w-4 h-4" fill={fill ? "currentColor" : "none"} stroke={fill ? "none" : "currentColor"} strokeWidth={fill ? undefined : 2} viewBox="0 0 24 24">
-                    {icon}
-                  </svg>
+                  {icon}
                 </a>
               ))}
             </div>

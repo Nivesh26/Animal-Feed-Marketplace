@@ -1,0 +1,376 @@
+[
+  {
+    "id": "1",
+    "name": "Royal Canin Maxi Adult Dry Dog Food",
+    "category": "Dry Food",
+    "animal": "Dog",
+    "brand": "Royal Canin",
+    "price": 3850,
+    "rating": 4.8,
+    "stock": 42,
+    "description": "Complete nutrition tailored for large breed adult dogs (26-44 kg) supporting optimal digestive health and joint maintenance.",
+    "image": "/src/ProductImage/product-1.jpg",
+    "features": [
+      "Digestive Health",
+      "Joint Support",
+      "Vet Recommended"
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Pedigree Adult Chicken & Vegetables",
+    "category": "Dry Food",
+    "animal": "Dog",
+    "brand": "Pedigree",
+    "price": 1450,
+    "rating": 4.4,
+    "stock": 65,
+    "description": "Wholesome daily kibble packed with essential dietary fibers, zinc, and omega-6 fatty acids for a shiny coat and healthy energy.",
+    "image": "/src/ProductImage/product-2.jpg",
+    "features": [
+      "Omega-3 & Zinc",
+      "Digestive Health",
+      "High Fiber"
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Purina Pro Plan High Protein Puppy Food",
+    "category": "Dry Food",
+    "animal": "Dog",
+    "brand": "Purina Pro Plan",
+    "price": 4200,
+    "rating": 4.9,
+    "stock": 28,
+    "description": "DHA-enriched real chicken formula designed to promote brain, vision, and strong immune system development in growing puppies.",
+    "image": "/src/ProductImage/product-3.jpg",
+    "features": [
+      "High Protein",
+      "Omega-3 & DHA",
+      "Immune Support"
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Blue Buffalo Wilderness Trail Dog Treats",
+    "category": "Treats",
+    "animal": "Dog",
+    "brand": "Blue Buffalo",
+    "price": 890,
+    "rating": 4.7,
+    "stock": 50,
+    "description": "Grain-free, protein-rich crunchy biscuits packed with real duck and antioxidants for rewarding active dogs.",
+    "image": "/src/ProductImage/product-4.jpg",
+    "features": [
+      "Grain-Free",
+      "High Protein",
+      "100% Natural"
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Whiskas Salmon in Jelly Wet Cat Food",
+    "category": "Wet Food",
+    "animal": "Cat",
+    "brand": "Whiskas",
+    "price": 650,
+    "rating": 4.6,
+    "stock": 80,
+    "description": "Tender pieces of real salmon in succulent jelly with balanced mineral levels to promote healthy urinary tracts in cats.",
+    "image": "/src/ProductImage/product-5.jpg",
+    "features": [
+      "Omega-3 & DHA",
+      "Digestive Health",
+      "Real Fish"
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Royal Canin Indoor Adult Cat Dry Food",
+    "category": "Dry Food",
+    "animal": "Cat",
+    "brand": "Royal Canin",
+    "price": 3200,
+    "rating": 4.8,
+    "stock": 35,
+    "description": "Specialized formula containing highly digestible protein (L.I.P.) to reduce stool odor and regulate hairballs in indoor cats.",
+    "image": "/src/ProductImage/product-6.jpg",
+    "features": [
+      "Digestive Health",
+      "Weight Control",
+      "Vet Recommended"
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Purina ONE Tender Selects with Real Chicken",
+    "category": "Dry Food",
+    "animal": "Cat",
+    "brand": "Purina ONE",
+    "price": 2450,
+    "rating": 4.7,
+    "stock": 48,
+    "description": "Dual-texture kibble with crunchy bites and tender meaty morsels supporting strong muscles and heart health.",
+    "image": "/src/ProductImage/product-7.jpg",
+    "features": [
+      "High Protein",
+      "Immune Support",
+      "Real Meat"
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Temptations Seafood Medley Crunchy Cat Treats",
+    "category": "Treats",
+    "animal": "Cat",
+    "brand": "Temptations",
+    "price": 420,
+    "rating": 4.9,
+    "stock": 95,
+    "description": "Irresistible crunchy outer shell with a soft savory center in tuna, shrimp, and salmon flavors. Under 2 calories per treat.",
+    "image": "/src/ProductImage/product-8.jpg",
+    "features": [
+      "Low Calorie",
+      "Real Seafood",
+      "Crunchy"
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Kaytee Forti-Diet Pro Health Parakeet Food",
+    "category": "Seeds & Grains",
+    "animal": "Bird",
+    "brand": "Kaytee",
+    "price": 780,
+    "rating": 4.5,
+    "stock": 54,
+    "description": "Nutrient-dense seed mixture enriched with DHA omega-3, natural prebiotics, and probiotics for healthy feathering and digestion.",
+    "image": "/src/ProductImage/product-9.jpg",
+    "features": [
+      "Omega-3 & DHA",
+      "Prebiotics",
+      "Vitamin Enriched"
+    ]
+  },
+  {
+    "id": "10",
+    "name": "ZuPreem FruitBlend Flavor Pellets Large Bird",
+    "category": "Pellets",
+    "animal": "Bird",
+    "brand": "ZuPreem",
+    "price": 1950,
+    "rating": 4.8,
+    "stock": 30,
+    "description": "Wholesome multi-colored fruit-flavored extruded pellets providing 21 essential vitamins and minerals for parrots and macaws.",
+    "image": "/src/ProductImage/product-10.jpg",
+    "features": [
+      "21 Vitamins & Minerals",
+      "Fruit Flavored",
+      "Vet Recommended"
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Wagner's Deluxe Wild Bird Seed Blend",
+    "category": "Seeds & Grains",
+    "animal": "Bird",
+    "brand": "Wagner's",
+    "price": 1100,
+    "rating": 4.6,
+    "stock": 60,
+    "description": "Premium blend of black oil sunflower, striped sunflower, millet, and cracked corn to attract varied songbirds.",
+    "image": "/src/ProductImage/product-11.jpg",
+    "features": [
+      "Natural Grains",
+      "High Energy",
+      "Non-GMO"
+    ]
+  },
+  {
+    "id": "12",
+    "name": "TetraMin Tropical Flakes Complete Fish Food",
+    "category": "Flakes & Micro-Pellets",
+    "animal": "Fish",
+    "brand": "Tetra",
+    "price": 550,
+    "rating": 4.7,
+    "stock": 75,
+    "description": "Nutritionally balanced daily staple flake food enhanced with BioActive formula for clear water and vibrant aquatic life.",
+    "image": "/src/ProductImage/product-12.jpg",
+    "features": [
+      "BioActive Formula",
+      "Color Enhancing",
+      "Clear Water Formula"
+    ]
+  },
+  {
+    "id": "13",
+    "name": "Hikari Bio-Pure Freeze-Dried Blood Worms",
+    "category": "Treats",
+    "animal": "Fish",
+    "brand": "Hikari",
+    "price": 850,
+    "rating": 4.8,
+    "stock": 40,
+    "description": "Pharmaceutical grade freeze-dried blood worms packed with vitamins and bio-encapsulated multivitamins for freshwater and marine fish.",
+    "image": "/src/ProductImage/product-13.jpg",
+    "features": [
+      "High Protein",
+      "Freeze-Dried",
+      "Vitamin Enriched"
+    ]
+  },
+  {
+    "id": "14",
+    "name": "API Tropical Greens Spirulina Sinking Pellets",
+    "category": "Pellets",
+    "animal": "Fish",
+    "brand": "API",
+    "price": 620,
+    "rating": 4.5,
+    "stock": 58,
+    "description": "Formulated with protein-rich spirulina algae, alfalfa, and squid to enhance natural colors in bottom-feeding tropical fish.",
+    "image": "/src/ProductImage/product-14.jpg",
+    "features": [
+      "High Protein",
+      "Spirulina Algae",
+      "Natural Color"
+    ]
+  },
+  {
+    "id": "15",
+    "name": "Oxbow Essentials Adult Rabbit Food Pellets",
+    "category": "Pellets",
+    "animal": "Rabbit",
+    "brand": "Oxbow",
+    "price": 1850,
+    "rating": 4.9,
+    "stock": 38,
+    "description": "Timothy grass meal based pellets formulated by veterinarians to meet the specific nutritional and digestive needs of adult pet rabbits.",
+    "image": "/src/ProductImage/product-15.jpg",
+    "features": [
+      "High Fiber",
+      "Timothy Grass Based",
+      "Vet Recommended"
+    ]
+  },
+  {
+    "id": "16",
+    "name": "Small Pet Select 2nd Cutting Timothy Hay",
+    "category": "Hay & Forage",
+    "animal": "Rabbit",
+    "brand": "Small Pet Select",
+    "price": 1400,
+    "rating": 4.8,
+    "stock": 45,
+    "description": "High-fiber, hand-selected aromatic green leafy Timothy hay crucial for natural dental wear and gastrointestinal motility in small pets.",
+    "image": "/src/ProductImage/product-16.jpg",
+    "features": [
+      "100% Organic",
+      "High Fiber",
+      "Non-GMO"
+    ]
+  },
+  {
+    "id": "17",
+    "name": "Purina Mills Cattle Finisher Complete Feed",
+    "category": "Pellets",
+    "animal": "Cattle",
+    "brand": "Purina Mills",
+    "price": 4500,
+    "rating": 4.6,
+    "stock": 25,
+    "description": "High-energy balanced grain ration designed for optimum rate of gain and carcass quality in feedlot beef cattle.",
+    "image": "/src/ProductImage/product-17.jpg",
+    "features": [
+      "High Energy",
+      "Balanced Ration",
+      "Rapid Growth"
+    ]
+  },
+  {
+    "id": "18",
+    "name": "Nutrena Dairy Cow High Protein Concentrate",
+    "category": "Concentrates",
+    "animal": "Cattle",
+    "brand": "Nutrena",
+    "price": 4800,
+    "rating": 4.7,
+    "stock": 20,
+    "description": "Formulated with rumen-bypass protein, vitamins A, D & E, and chelated trace minerals to support maximum milk production in lactating cows.",
+    "image": "/src/ProductImage/product-18.jpg",
+    "features": [
+      "High Protein",
+      "Rumen-Bypass",
+      "Chelated Minerals"
+    ]
+  },
+  {
+    "id": "19",
+    "name": "Manna Pro Organic Layer Pellets for Chickens",
+    "category": "Pellets",
+    "animal": "Poultry",
+    "brand": "Manna Pro",
+    "price": 2600,
+    "rating": 4.8,
+    "stock": 34,
+    "description": "Certified USDA Organic 16% protein complete layer feed with added calcium for strong eggshells and robust egg production in backyard hens.",
+    "image": "/src/ProductImage/product-19.jpg",
+    "features": [
+      "100% Organic",
+      "High Protein",
+      "Calcium Enriched"
+    ]
+  },
+  {
+    "id": "20",
+    "name": "Scratch and Peck Feeds Naturally Free Grower",
+    "category": "Seeds & Grains",
+    "animal": "Poultry",
+    "brand": "Scratch and Peck",
+    "price": 2900,
+    "rating": 4.7,
+    "stock": 29,
+    "description": "Non-GMO Project verified whole grain mash feed formulated with organic flaxseed, peas, and wild herbs for growing pullets and broilers.",
+    "image": "/src/ProductImage/product-20.jpg",
+    "features": [
+      "Non-GMO",
+      "100% Organic",
+      "Whole Grain"
+    ]
+  },
+  {
+    "id": "21",
+    "name": "Buckeye Nutrition Safe 'N Easy Performance",
+    "category": "Pellets",
+    "animal": "Horse",
+    "brand": "Buckeye Nutrition",
+    "price": 3650,
+    "rating": 4.8,
+    "stock": 22,
+    "description": "Low-starch, controlled-carb performance horse feed formulated with beet pulp, soybean oil, and stabilized rice bran for sustained stamina.",
+    "image": "/src/ProductImage/product-21.jpg",
+    "features": [
+      "Low Starch",
+      "Controlled Carb",
+      "Beet Pulp Based"
+    ]
+  },
+  {
+    "id": "22",
+    "name": "Triple Crown Senior Complete Equine Feed",
+    "category": "Pellets",
+    "animal": "Horse",
+    "brand": "Triple Crown",
+    "price": 3950,
+    "rating": 4.9,
+    "stock": 18,
+    "description": "Highly palatable beet pulp-based feed with elevated fat levels and EquiMix technology for aging horses and horses with dentition difficulties.",
+    "image": "/src/ProductImage/product-22.jpg",
+    "features": [
+      "High Fat",
+      "Digestive Enzymes",
+      "Beet Pulp Based"
+    ]
+  }
+]

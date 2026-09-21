@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <>
       {/* ─── Main Header ─── */}
-      <header className="sticky top-0 z-50 bg-white border-b border-blue-100 shadow-sm">
+      <header className="sticky top-0 z-50 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-14 sm:h-16 lg:h-20 gap-2 sm:gap-4">
 

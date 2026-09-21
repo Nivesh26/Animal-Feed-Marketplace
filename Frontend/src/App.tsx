@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Home from './Pages/Home'
+import Home from './UserPages/Home'
 import UserLogin from './Logins/UserLogin'
 import UserSignup from './Logins/UserSignup'
-import Products from './Pages/Products'
-import Categories from './Pages/Categories'
-import Aboutus from './Pages/Aboutus'
-import Contact from './Pages/Contact'
-import ProductDetail from './Pages/ProductDetail'
-import Cart from './Pages/Cart'
+import Products from './UserPages/Products'
+import Categories from './UserPages/Categories'
+import Aboutus from './UserPages/Aboutus'
+import Contact from './UserPages/Contact'
+import ProductDetail from './UserPages/ProductDetail'
+import Cart from './UserPages/Cart'
 
 const App = () => {
   return (

@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+/* ── Geist Variable Font ── */
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Apply Geist globally */
+html,
+body {
+  font-family: "Geist", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

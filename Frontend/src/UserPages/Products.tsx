@@ -96,6 +96,7 @@ const Products = () => {
             onChange={(e) => {
               setActiveCategory(e.target.value);
               setMobileFilterOpen(false);
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             className="w-full appearance-none bg-white border border-gray-300 hover:border-gray-400 rounded-xl px-3.5 py-2 pr-9 text-xs sm:text-sm font-medium text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#2563a8] focus:border-[#2563a8] cursor-pointer transition-colors shadow-2xs"
           >
@@ -319,11 +320,10 @@ const Products = () => {
                                 setCurrentPage(page);
                                 window.scrollTo({ top: 0, behavior: "smooth" });
                               }}
-                              className={`w-8 h-8 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                                isActive
+                              className={`w-8 h-8 rounded-full text-xs font-semibold transition-all cursor-pointer ${isActive
                                   ? "bg-[#2563a8] text-white shadow-xs"
                                   : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
-                              }`}
+                                }`}
                             >
                               {page}
                             </button>

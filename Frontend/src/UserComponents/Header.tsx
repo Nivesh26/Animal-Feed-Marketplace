@@ -71,9 +71,8 @@ const Header = () => {
                       {label}
                     </span>
                     <span
-                      className={`absolute -bottom-0.5 left-0 h-[2px] rounded-full transition-all duration-300 ${
-                        isActive ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
+                      className={`absolute -bottom-0.5 left-0 h-[2px] rounded-full transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"
+                        }`}
                       style={{ backgroundColor: '#2563a8' }}
                     />
                   </Link>
@@ -107,9 +106,9 @@ const Header = () => {
                 to="/login"
                 id="login-btn"
                 className="hidden sm:inline-flex flex-shrink-0 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-white text-xs sm:text-sm font-medium transition-colors"
-                style={{backgroundColor:'#2563a8'}}
-                onMouseEnter={e => (e.currentTarget as HTMLElement).style.backgroundColor='#1d4e8f'}
-                onMouseLeave={e => (e.currentTarget as HTMLElement).style.backgroundColor='#2563a8'}
+                style={{ backgroundColor: '#2563a8' }}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.backgroundColor = '#1d4e8f'}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.backgroundColor = '#2563a8'}
               >
                 Login
               </Link>
@@ -154,9 +153,8 @@ const Header = () => {
       <aside
         id="mobile-nav"
         aria-hidden={!menuOpen}
-        className={`fixed top-14 sm:top-16 right-0 z-50 flex flex-col w-[min(280px,85vw)] h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] bg-white border-l border-gray-200 shadow-xl transition-transform duration-200 ease-out lg:hidden ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-14 sm:top-16 right-0 z-50 flex flex-col w-[min(280px,85vw)] h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] bg-white border-l border-gray-200 shadow-xl transition-transform duration-200 ease-out lg:hidden ${menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex flex-col flex-1 overflow-y-auto">
 
@@ -205,9 +203,8 @@ const Header = () => {
                     key={label}
                     to={href}
                     onClick={closeMenu}
-                    className={`flex items-center justify-between px-3 py-2.5 mb-0.5 rounded-lg text-sm font-medium transition-colors ${
-                      isActive ? "bg-blue-50 text-[#2563a8] font-semibold" : "text-gray-700 hover:bg-blue-50"
-                    }`}
+                    className={`flex items-center justify-between px-3 py-2.5 mb-0.5 rounded-lg text-sm font-medium transition-colors ${isActive ? "bg-blue-50 text-[#2563a8] font-semibold" : "text-gray-700 hover:bg-blue-50"
+                      }`}
                     style={{ color: isActive ? '#2563a8' : undefined }}
                     onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#2563a8')}
                     onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = isActive ? '#2563a8' : '')}
@@ -232,9 +229,9 @@ const Header = () => {
               id="mobile-login-btn"
               onClick={closeMenu}
               className="mt-auto pt-4 inline-block w-full text-center px-6 py-2.5 rounded-full text-white text-sm font-medium transition-colors"
-              style={{backgroundColor:'#2563a8'}}
-              onMouseEnter={e => (e.currentTarget as HTMLElement).style.backgroundColor='#1d4e8f'}
-              onMouseLeave={e => (e.currentTarget as HTMLElement).style.backgroundColor='#2563a8'}
+              style={{ backgroundColor: '#2563a8' }}
+              onMouseEnter={e => (e.currentTarget as HTMLElement).style.backgroundColor = '#1d4e8f'}
+              onMouseLeave={e => (e.currentTarget as HTMLElement).style.backgroundColor = '#2563a8'}
             >
               Login
             </Link>

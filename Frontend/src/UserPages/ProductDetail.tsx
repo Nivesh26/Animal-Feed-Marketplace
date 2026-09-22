@@ -1,17 +1,23 @@
-import Copyright from "../UserComponents/Copyright"
-import Footer from "../UserComponents/Footer"
-import Header from "../UserComponents/Header"
-import Topbar from "../UserComponents/Topbar"
+import Topbar from "../UserComponents/Topbar";
+import Header from "../UserComponents/Header";
+import ProductDetailContent from "../UserComponents/ProductDetailContent";
+import ProductReview from "../UserComponents/ProductReview";
+import Footer from "../UserComponents/Footer";
+import Copyright from "../UserComponents/Copyright";
 
 const ProductDetail = () => {
-    return (
-        <div>
-            <Topbar />
-            <Header />
-            <Footer />
-            <Copyright />
-        </div>
-    )
-}
+  return (
+    <div className="min-h-screen flex flex-col bg-white">
+      <Topbar />
+      <Header />
+      <main className="flex-1">
+        <ProductDetailContent />
+        <ProductReview />
+      </main>
+      <Footer />
+      <Copyright />
+    </div>
+  );
+};
 
-export default ProductDetail
+export default ProductDetail;

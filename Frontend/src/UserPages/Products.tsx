@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { HiChevronDown, HiFunnel, HiXMark } from "react-icons/hi2";
 import Topbar from "../UserComponents/Topbar";
 import Header from "../UserComponents/Header";
@@ -36,12 +36,22 @@ const animalCategories = [
 const ITEMS_PER_PAGE = 9; // 3x3 format: 3 columns x 3 rows
 
 const Products = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchParams] = useSearchParams();
+  const initialCategory = searchParams.get("category") || "All";
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(15000);
   const [sortBy, setSortBy] = useState("featured");
   const [currentPage, setCurrentPage] = useState(1);
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+
+  // Sync category if URL parameter changes
+  useEffect(() => {
+    const cat = searchParams.get("category");
+    if (cat) {
+      setActiveCategory(cat);
+    }
+  }, [searchParams]);
 
   // Reset to first page whenever filter or sort changes
   useEffect(() => {

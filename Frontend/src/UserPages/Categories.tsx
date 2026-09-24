@@ -1,11 +1,10 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { HiArrowRight, HiMagnifyingGlass, HiChevronRight } from "react-icons/hi2";
+import { HiArrowRight, HiMagnifyingGlass } from "react-icons/hi2";
 import Topbar from "../UserComponents/Topbar";
 import Header from "../UserComponents/Header";
 import Footer from "../UserComponents/Footer";
 import Copyright from "../UserComponents/Copyright";
-
 import dogImg from "../ProductImage/product-1.jpg";
 import catImg from "../ProductImage/product-5.jpg";
 import birdImg from "../ProductImage/product-9.jpg";
@@ -134,18 +133,6 @@ const Categories = () => {
 
       <main className="flex-1 py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* ── Breadcrumb ── */}
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-1.5 sm:gap-2 text-xs text-gray-500">
-              <li>
-                <Link to="/" className="hover:text-[#2563a8] transition-colors">
-                  Home
-                </Link>
-              </li>
-              <HiChevronRight className="w-3.5 h-3.5 text-gray-400 shrink-0" />
-              <li className="text-gray-900 font-medium">Categories</li>
-            </ol>
-          </nav>
 
           {/* ── Section Header ── */}
           <div className="mb-8 sm:mb-10">
@@ -183,11 +170,10 @@ const Categories = () => {
                   key={tab.key}
                   type="button"
                   onClick={() => setSelectedGroup(tab.key as any)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                    selectedGroup === tab.key
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${selectedGroup === tab.key
                       ? "bg-emerald-600 text-white shadow-xs"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                  }`}
+                    }`}
                 >
                   {tab.label}
                 </button>

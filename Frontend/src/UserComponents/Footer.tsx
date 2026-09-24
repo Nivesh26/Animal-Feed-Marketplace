@@ -12,11 +12,11 @@ const quickLinks = [
 ];
 
 const categories = [
-  { label: "Dog Food", href: "#" },
-  { label: "Cat Food", href: "#" },
-  { label: "Bird Food", href: "#" },
-  { label: "Fish Food", href: "#" },
-  { label: "Rabbit Food", href: "#" },
+  { label: "Dog Food", href: "/products?category=Dog" },
+  { label: "Cat Food", href: "/products?category=Cat" },
+  { label: "Bird Food", href: "/products?category=Bird" },
+  { label: "Fish Food", href: "/products?category=Fish" },
+  { label: "Rabbit Food", href: "/products?category=Rabbit" },
 ];
 
 const support = [
@@ -93,10 +93,15 @@ const Footer = () => {
             <ul className="flex flex-col gap-3">
               {categories.map(({ label, href }) => (
                 <li key={label}>
-                  <a href={href} className="text-sm text-gray-500 transition-colors duration-150"
-                    onMouseEnter={e => linkHover(e, true)} onMouseLeave={e => linkHover(e, false)}>
+                  <Link
+                    to={href}
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    className="text-sm text-gray-500 transition-colors duration-150"
+                    onMouseEnter={e => linkHover(e, true)}
+                    onMouseLeave={e => linkHover(e, false)}
+                  >
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -123,4 +128,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer; 

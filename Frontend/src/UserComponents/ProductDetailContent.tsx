@@ -84,11 +84,10 @@ const ProductDetailContent = () => {
                   key={img.id}
                   type="button"
                   onClick={() => setSelectedImageIndex(index)}
-                  className={`w-16 h-16 sm:w-18 sm:h-18 rounded-xl bg-white border-2 p-1.5 sm:p-2 flex items-center justify-center transition-all cursor-pointer overflow-hidden ${
-                    isSelected
-                      ? "border-emerald-600 shadow-xs ring-2 ring-emerald-600/20"
-                      : "border-gray-100 hover:border-gray-300"
-                  }`}
+                  className={`w-16 h-16 sm:w-18 sm:h-18 rounded-xl bg-white border-2 p-1.5 sm:p-2 flex items-center justify-center transition-all cursor-pointer overflow-hidden ${isSelected
+                    ? "border-emerald-600 shadow-xs ring-2 ring-emerald-600/20"
+                    : "border-gray-100 hover:border-gray-300"
+                    }`}
                   aria-label={`View product image ${index + 1}`}
                 >
                   <img
@@ -168,11 +167,10 @@ const ProductDetailContent = () => {
                     key={opt.label}
                     type="button"
                     onClick={() => setSelectedWeight(idx)}
-                    className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer border ${
-                      isSelected
-                        ? "border-emerald-600 bg-emerald-50 text-emerald-700 shadow-2xs"
-                        : "border-gray-200 bg-white text-gray-700 hover:border-gray-300"
-                    }`}
+                    className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer border ${isSelected
+                      ? "border-emerald-600 bg-emerald-50 text-emerald-700 shadow-2xs"
+                      : "border-gray-200 bg-white text-gray-700 hover:border-gray-300"
+                      }`}
                   >
                     {opt.label}
                   </button>

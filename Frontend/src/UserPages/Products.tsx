@@ -331,8 +331,8 @@ const Products = () => {
                                 window.scrollTo({ top: 0, behavior: "smooth" });
                               }}
                               className={`w-8 h-8 rounded-full text-xs font-semibold transition-all cursor-pointer ${isActive
-                                  ? "bg-[#2563a8] text-white shadow-xs"
-                                  : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                                ? "bg-[#2563a8] text-white shadow-xs"
+                                : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
                                 }`}
                             >
                               {page}

@@ -26,10 +26,6 @@ const CTA = () => {
 
       {/* Centered Content Container */}
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <span className="inline-flex items-center px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold tracking-wide uppercase text-emerald-300 bg-emerald-950/60 border border-emerald-400/30 backdrop-blur-md mb-3 shadow-xs">
-          Premium Nutrition & Farm Supplies
-        </span>
-
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight drop-shadow-md">
           Quality Feed Delivered Directly to Your Farm & Door
         </h2>

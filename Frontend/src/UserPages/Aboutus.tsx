@@ -15,7 +15,6 @@ import Topbar from "../UserComponents/Topbar";
 import Header from "../UserComponents/Header";
 import Footer from "../UserComponents/Footer";
 import Copyright from "../UserComponents/Copyright";
-
 import aboutHeroImg from "../assets/about-hero.jpg";
 import teamSarahImg from "../assets/team-sarah.jpg";
 import teamMarcusImg from "../assets/team-marcus.jpg";

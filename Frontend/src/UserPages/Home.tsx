@@ -5,6 +5,7 @@ import Topbar from '../UserComponents/Topbar'
 import Copyright from '../UserComponents/Copyright'
 import TopProduct from '../UserComponents/TopProduct'
 import BestSelling from '../UserComponents/BestSelling'
+import CTA from '../UserComponents/CTA'
 import FAQ from '../UserComponents/Faq'
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <Hero />
       <TopProduct />
       <BestSelling />
+      <CTA />
       <FAQ />
       <Footer />
       <Copyright />

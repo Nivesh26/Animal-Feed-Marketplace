@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HiChevronDown } from "react-icons/hi2";
+import Reveal from "./ScrollReveal";
 
 interface FAQItem {
     question: string;
@@ -45,11 +46,13 @@ const FAQ = () => {
         <section className="py-12 sm:py-16 bg-white">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="text-center mb-6 sm:mb-8">
-                    <h2 className="text-lg sm:text-xl font-bold text-gray-900 tracking-tight">
-                        Frequently Asked Questions
-                    </h2>
-                </div>
+                <Reveal delay={0} yOffset={16}>
+                    <div className="text-center mb-6 sm:mb-8">
+                        <h2 className="text-lg sm:text-xl font-bold text-gray-900 tracking-tight">
+                            Frequently Asked Questions
+                        </h2>
+                    </div>
+                </Reveal>
 
                 {/* FAQ Accordion List */}
                 <div className="space-y-3">
@@ -57,31 +60,30 @@ const FAQ = () => {
                         const isOpen = openIndex === index;
 
                         return (
-                            <div
-                                key={index}
-                                className="border border-gray-100 rounded-2xl overflow-hidden transition-colors duration-200 bg-white shadow-2xs hover:border-gray-200"
-                            >
-                                <button
-                                    type="button"
-                                    onClick={() => toggleFAQ(index)}
-                                    className="w-full px-6 py-4.5 sm:py-5 flex items-center justify-between text-left gap-4 cursor-pointer focus:outline-none"
-                                    aria-expanded={isOpen}
-                                >
-                                    <span className="text-xs sm:text-sm font-semibold text-gray-900">
-                                        {faq.question}
-                                    </span>
-                                    <HiChevronDown
-                                        className={`shrink-0 w-5 h-5 text-gray-400 transition-transform duration-300 ${isOpen ? "rotate-180 text-gray-700" : ""
-                                            }`}
-                                    />
-                                </button>
+                            <Reveal key={index} delay={index * 60} yOffset={18}>
+                                <div className="border border-gray-100 rounded-2xl overflow-hidden transition-colors duration-200 bg-white shadow-2xs hover:border-gray-200">
+                                    <button
+                                        type="button"
+                                        onClick={() => toggleFAQ(index)}
+                                        className="w-full px-6 py-4.5 sm:py-5 flex items-center justify-between text-left gap-4 cursor-pointer focus:outline-none"
+                                        aria-expanded={isOpen}
+                                    >
+                                        <span className="text-xs sm:text-sm font-semibold text-gray-900">
+                                            {faq.question}
+                                        </span>
+                                        <HiChevronDown
+                                            className={`shrink-0 w-5 h-5 text-gray-400 transition-transform duration-300 ${isOpen ? "rotate-180 text-gray-700" : ""
+                                                }`}
+                                        />
+                                    </button>
 
-                                {isOpen && (
-                                    <div className="px-6 pb-4 sm:pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-50">
-                                        {faq.answer}
-                                    </div>
-                                )}
-                            </div>
+                                    {isOpen && (
+                                        <div className="px-6 pb-4 sm:pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-50">
+                                            {faq.answer}
+                                        </div>
+                                    )}
+                                </div>
+                            </Reveal>
                         );
                     })}
                 </div>

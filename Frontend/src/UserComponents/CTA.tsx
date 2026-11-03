@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi2";
 import ctaBg from "../assets/cta-bg.jpg";
 import ctaVideo from "../assets/cta-bg.mp4";
+import Reveal from "./ScrollReveal";
 
 const CTA = () => {
   return (
@@ -36,33 +37,35 @@ const CTA = () => {
         aria-hidden="true"
       />
 
-      {/* Centered Content Container */}
+      {/* Centered Content Container with smooth scroll reveal */}
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight drop-shadow-md">
-          Quality Feed Delivered Directly to Your Farm & Door
-        </h2>
+        <Reveal delay={0} yOffset={24}>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight drop-shadow-md">
+            Quality Feed Delivered Directly to Your Farm & Door
+          </h2>
 
-        <p className="mt-3 text-xs sm:text-sm text-gray-200 leading-relaxed max-w-lg mx-auto drop-shadow-xs">
-          Trusted formulas for livestock and domestic pets. Get certified nutrition,
-          bulk savings, and reliable scheduled delivery.
-        </p>
+          <p className="mt-3 text-xs sm:text-sm text-gray-200 leading-relaxed max-w-lg mx-auto drop-shadow-xs">
+            Trusted formulas for livestock and domestic pets. Get certified nutrition,
+            bulk savings, and reliable scheduled delivery.
+          </p>
 
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-          <Link
-            to="/products"
-            className="inline-flex items-center gap-1.5 px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-xs sm:text-sm shadow-xl shadow-black/30 transition-all duration-200 active:scale-95 cursor-pointer"
-          >
-            <span>Shop All Products</span>
-            <HiArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              to="/products"
+              className="inline-flex items-center gap-1.5 px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-xs sm:text-sm shadow-xl shadow-black/30 transition-all duration-200 active:scale-95 cursor-pointer"
+            >
+              <span>Shop All Products</span>
+              <HiArrowRight className="w-4 h-4" />
+            </Link>
 
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-1.5 px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-white/15 hover:bg-white/25 text-white font-semibold text-xs sm:text-sm border border-white/30 backdrop-blur-md transition-all duration-200 active:scale-95 cursor-pointer"
-          >
-            <span>Request Bulk Quote</span>
-          </Link>
-        </div>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-1.5 px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-white/15 hover:bg-white/25 text-white font-semibold text-xs sm:text-sm border border-white/30 backdrop-blur-md transition-all duration-200 active:scale-95 cursor-pointer"
+            >
+              <span>Request Bulk Quote</span>
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

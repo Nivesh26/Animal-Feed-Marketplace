@@ -5,6 +5,7 @@ import Topbar from "../UserComponents/Topbar";
 import Header from "../UserComponents/Header";
 import Footer from "../UserComponents/Footer";
 import Copyright from "../UserComponents/Copyright";
+import Reveal from "../UserComponents/ScrollReveal";
 import dogImg from "../assets/dog.jpg";
 import catImg from "../assets/cat.jpg";
 import birdImg from "../assets/bird.jpg";
@@ -201,53 +202,59 @@ const Categories = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
-              {filteredCategories.map((category) => (
-                <Link
+              {filteredCategories.map((category, index) => (
+                <Reveal
                   key={category.id}
-                  to={`/products?category=${encodeURIComponent(category.name)}`}
-                  className="group flex flex-col bg-white rounded-[28px] border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden justify-between"
+                  delay={(index % 4) * 75}
+                  yOffset={24}
+                  className="h-full"
                 >
-                  {/* Image Container */}
-                  <div className="relative aspect-square w-full bg-white p-6 flex items-center justify-center overflow-hidden">
-                    <img
-                      src={category.image}
-                      alt={category.title}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
-                      loading="lazy"
-                    />
-                  </div>
-
-                  {/* Content Section */}
-                  <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 border-t border-gray-50">
-                    <div>
-                      {/* Name / Category badge */}
-                      <p className="text-[10px] sm:text-[11px] font-medium text-gray-400 uppercase tracking-wider mb-1">
-                        {category.name} Nutrition
-                      </p>
-
-                      {/* Title */}
-                      <h2 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-[#2563a8] transition-colors line-clamp-1 mb-1.5">
-                        {category.title}
-                      </h2>
-
-                      {/* Description */}
-                      <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-4">
-                        {category.description}
-                      </p>
+                  <Link
+                    to={`/products?category=${encodeURIComponent(category.name)}`}
+                    className="group h-full flex flex-col bg-white rounded-[28px] border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden justify-between"
+                  >
+                    {/* Image Container */}
+                    <div className="relative aspect-square w-full bg-white p-6 flex items-center justify-center overflow-hidden">
+                      <img
+                        src={category.image}
+                        alt={category.title}
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
+                        loading="lazy"
+                      />
                     </div>
 
-                    {/* Footer Row: Explore Button with Arrow */}
-                    <div className="flex items-center justify-between pt-3 border-t border-gray-100 mt-auto">
-                      <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 transition-colors">
-                        Browse Products
-                      </span>
+                    {/* Content Section */}
+                    <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 border-t border-gray-50">
+                      <div>
+                        {/* Name / Category badge */}
+                        <p className="text-[10px] sm:text-[11px] font-medium text-gray-400 uppercase tracking-wider mb-1">
+                          {category.name} Nutrition
+                        </p>
 
-                      <div className="w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all">
-                        <HiArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                        {/* Title */}
+                        <h2 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-[#2563a8] transition-colors line-clamp-1 mb-1.5">
+                          {category.title}
+                        </h2>
+
+                        {/* Description */}
+                        <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-4">
+                          {category.description}
+                        </p>
+                      </div>
+
+                      {/* Footer Row: Explore Button with Arrow */}
+                      <div className="flex items-center justify-between pt-3 border-t border-gray-100 mt-auto">
+                        <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 transition-colors">
+                          Browse Products
+                        </span>
+
+                        <div className="w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                          <HiArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </Reveal>
               ))}
             </div>
           )}

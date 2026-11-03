@@ -1,26 +1,38 @@
 import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi2";
 import ctaBg from "../assets/cta-bg.jpg";
+import ctaVideo from "../assets/cta-bg.mp4";
 
 const CTA = () => {
   return (
-    <section className="relative w-full overflow-hidden py-12 sm:py-14 lg:py-16 flex items-center justify-center text-center">
-      {/* Full-width background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${ctaBg})` }}
+    <section className="relative w-full overflow-hidden py-16 sm:py-20 lg:py-24 flex items-center justify-center text-center">
+      {/* Full-width Background Video with fallback poster */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster={ctaBg}
+        className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
         aria-hidden="true"
-      />
+      >
+        <source src={ctaVideo} type="video/mp4" />
+        <img
+          src={ctaBg}
+          alt="Animal feed farm background"
+          className="w-full h-full object-cover"
+        />
+      </video>
 
       {/* Cinematic dark & emerald tint overlay for contrast and readability */}
       <div
-        className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-black/45"
+        className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/65 to-black/50"
         aria-hidden="true"
       />
 
       {/* Subtle ambient soft glow */}
       <div
-        className="absolute inset-0 bg-radial from-emerald-500/10 via-transparent to-transparent pointer-events-none"
+        className="absolute inset-0 bg-radial from-emerald-500/15 via-transparent to-transparent pointer-events-none"
         aria-hidden="true"
       />
 
@@ -30,12 +42,12 @@ const CTA = () => {
           Quality Feed Delivered Directly to Your Farm & Door
         </h2>
 
-        <p className="mt-2.5 text-xs sm:text-sm text-gray-200 leading-relaxed max-w-lg mx-auto drop-shadow-xs">
+        <p className="mt-3 text-xs sm:text-sm text-gray-200 leading-relaxed max-w-lg mx-auto drop-shadow-xs">
           Trusted formulas for livestock and domestic pets. Get certified nutrition,
           bulk savings, and reliable scheduled delivery.
         </p>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
           <Link
             to="/products"
             className="inline-flex items-center gap-1.5 px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-xs sm:text-sm shadow-xl shadow-black/30 transition-all duration-200 active:scale-95 cursor-pointer"

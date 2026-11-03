@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import ScrollToTop from './UserComponents/ScrollToTop'
 import Home from './UserPages/Home'
 import UserLogin from './Logins/UserLogin'
 import UserSignup from './Logins/UserSignup'
@@ -12,6 +13,7 @@ import Cart from './UserPages/Cart'
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Products />} />

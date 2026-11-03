@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi2";
 
-import dogImg from "../ProductImage/product-1.jpg";
-import catImg from "../ProductImage/product-5.jpg";
-import birdImg from "../ProductImage/product-9.jpg";
-import fishImg from "../ProductImage/product-12.jpg";
-import rabbitImg from "../ProductImage/product-15.jpg";
-import cattleImg from "../ProductImage/product-17.jpg";
-import poultryImg from "../ProductImage/product-19.jpg";
-import horseImg from "../ProductImage/product-21.jpg";
+import dogImg from "../assets/dog.jpg";
+import catImg from "../assets/cat.jpg";
+import birdImg from "../assets/bird.jpg";
+import fishImg from "../assets/fish.jpg";
+import rabbitImg from "../assets/rabbit.jpg";
+import cattleImg from "../assets/cattle.jpg";
+import poultryImg from "../assets/poultry.jpg";
+import horseImg from "../assets/horse.jpg";
 
 interface HomeCategory {
   name: string;
@@ -61,15 +61,15 @@ const CategoriesHome = () => {
             {loopedCategories.map((cat, index) => (
               <Link
                 key={`${cat.name}-${index}`}
-                to="/categories"
+                to={`/products?category=${encodeURIComponent(cat.name)}`}
                 className="group flex flex-col items-center text-center p-2 rounded-2xl transition-all duration-300 cursor-pointer shrink-0"
               >
                 {/* Square Thumbnail */}
-                <div className="w-18 h-18 sm:w-20 sm:h-20 aspect-square rounded-2xl bg-white border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] group-hover:border-emerald-300 group-hover:shadow-md transition-colors duration-200 flex items-center justify-center p-2.5 sm:p-3 overflow-hidden">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 aspect-square rounded-2xl bg-white border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] group-hover:border-emerald-400 group-hover:shadow-md transition-all duration-300 flex items-center justify-center p-2 sm:p-2.5 overflow-hidden">
                   <img
                     src={cat.image}
                     alt={cat.name}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                 </div>

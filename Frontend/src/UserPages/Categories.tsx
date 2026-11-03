@@ -5,14 +5,14 @@ import Topbar from "../UserComponents/Topbar";
 import Header from "../UserComponents/Header";
 import Footer from "../UserComponents/Footer";
 import Copyright from "../UserComponents/Copyright";
-import dogImg from "../ProductImage/product-1.jpg";
-import catImg from "../ProductImage/product-5.jpg";
-import birdImg from "../ProductImage/product-9.jpg";
-import fishImg from "../ProductImage/product-12.jpg";
-import rabbitImg from "../ProductImage/product-15.jpg";
-import cattleImg from "../ProductImage/product-17.jpg";
-import poultryImg from "../ProductImage/product-19.jpg";
-import horseImg from "../ProductImage/product-21.jpg";
+import dogImg from "../assets/dog.jpg";
+import catImg from "../assets/cat.jpg";
+import birdImg from "../assets/bird.jpg";
+import fishImg from "../assets/fish.jpg";
+import rabbitImg from "../assets/rabbit.jpg";
+import cattleImg from "../assets/cattle.jpg";
+import poultryImg from "../assets/poultry.jpg";
+import horseImg from "../assets/horse.jpg";
 
 interface CategoryData {
   id: string;
@@ -171,8 +171,8 @@ const Categories = () => {
                   type="button"
                   onClick={() => setSelectedGroup(tab.key as any)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${selectedGroup === tab.key
-                      ? "bg-emerald-600 text-white shadow-xs"
-                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    ? "bg-emerald-600 text-white shadow-xs"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                     }`}
                 >
                   {tab.label}

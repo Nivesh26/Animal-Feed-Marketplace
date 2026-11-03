@@ -1,3 +1,4 @@
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi2";
 import productsData from "../Json/Product.json";
@@ -16,15 +17,54 @@ interface Product {
   features?: string[];
 }
 
-const LIKED_PRODUCT_IDS = ["2", "7", "9", "17"];
+// 5 curated sets of 4 products (20 products) rotated every 10 seconds
+const PRODUCT_SETS: string[][] = [
+  ["2", "7", "9", "17"],
+  ["4", "6", "12", "21"],
+  ["3", "8", "10", "15"],
+  ["1", "5", "11", "19"],
+  ["13", "14", "16", "20"],
+];
 
 const ProductLiked = () => {
-  const likedProducts: Product[] = LIKED_PRODUCT_IDS.map(
-    (id) => productsData.find((p) => p.id === id)!
-  ).filter(Boolean);
+  const [currentSetIndex, setCurrentSetIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const switchSet = useCallback((nextIndex: number) => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentSetIndex(nextIndex);
+      setIsTransitioning(false);
+    }, 220);
+  }, []);
+
+  const handleNext = useCallback(() => {
+    const nextIdx = (currentSetIndex + 1) % PRODUCT_SETS.length;
+    switchSet(nextIdx);
+  }, [currentSetIndex, switchSet]);
+
+  // Rotate every 10 seconds (paused on mouse hover)
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      handleNext();
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, handleNext]);
+
+  const currentProducts: Product[] = PRODUCT_SETS[currentSetIndex]
+    .map((id) => productsData.find((p) => p.id === id)!)
+    .filter(Boolean);
 
   return (
-    <section className="py-10 sm:py-14 bg-white">
+    <section
+      className="py-10 sm:py-14 bg-white"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex items-center justify-between mb-6 sm:mb-8">
@@ -41,9 +81,15 @@ const ProductLiked = () => {
           </Link>
         </div>
 
-        {/* 4 Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {likedProducts.map((product) => (
+        {/* 4 Product Grid with smooth crossfade */}
+        <div
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-300 ease-in-out ${
+            isTransitioning
+              ? "opacity-0 translate-y-1 scale-[0.99]"
+              : "opacity-100 translate-y-0 scale-100"
+          }`}
+        >
+          {currentProducts.map((product) => (
             <div
               key={product.id}
               className="group flex flex-col bg-white rounded-[28px] border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden justify-between"

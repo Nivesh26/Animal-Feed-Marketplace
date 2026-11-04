@@ -1,5 +1,5 @@
 import type { MouseEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import Logo from "../assets/Logo.png";
 
@@ -39,6 +39,10 @@ const linkHover = (e: MouseEvent<HTMLElement>, enter: boolean) => {
 };
 
 const Footer = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+  const isHome = currentPath === "/" || currentPath === "";
+
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-14">
@@ -76,14 +80,28 @@ const Footer = () => {
           <div className="flex flex-col gap-4">
             <h3 className="text-xs font-bold text-gray-800 uppercase tracking-widest">Quick Links</h3>
             <ul className="flex flex-col gap-3">
-              {quickLinks.map(({ label, href }) => (
-                <li key={label}>
-                  <Link to={href} className="text-sm text-gray-500 transition-colors duration-150"
-                    onMouseEnter={e => linkHover(e, true)} onMouseLeave={e => linkHover(e, false)}>
-                    {label}
-                  </Link>
-                </li>
-              ))}
+              {quickLinks.map(({ label, href }) => {
+                const isActive = label === "Home" ? isHome : currentPath === href;
+                return (
+                  <li key={label}>
+                    <Link
+                      to={href}
+                      className={`text-sm transition-colors duration-150 ${
+                        isActive
+                          ? "font-bold text-gray-900"
+                          : "text-gray-500 hover:text-[#2563a8]"
+                      }`}
+                      style={{ color: isActive ? "#111827" : undefined }}
+                      onMouseEnter={(e) => linkHover(e, true)}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.color = isActive ? "#111827" : "";
+                      }}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -91,19 +109,29 @@ const Footer = () => {
           <div className="flex flex-col gap-4">
             <h3 className="text-xs font-bold text-gray-800 uppercase tracking-widest">Categories</h3>
             <ul className="flex flex-col gap-3">
-              {categories.map(({ label, href }) => (
-                <li key={label}>
-                  <Link
-                    to={href}
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                    className="text-sm text-gray-500 transition-colors duration-150"
-                    onMouseEnter={e => linkHover(e, true)}
-                    onMouseLeave={e => linkHover(e, false)}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
+              {categories.map(({ label, href }) => {
+                const isActive = location.pathname + location.search === href;
+                return (
+                  <li key={label}>
+                    <Link
+                      to={href}
+                      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                      className={`text-sm transition-colors duration-150 ${
+                        isActive
+                          ? "font-bold text-gray-900"
+                          : "text-gray-500 hover:text-[#2563a8]"
+                      }`}
+                      style={{ color: isActive ? "#111827" : undefined }}
+                      onMouseEnter={(e) => linkHover(e, true)}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.color = isActive ? "#111827" : "";
+                      }}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

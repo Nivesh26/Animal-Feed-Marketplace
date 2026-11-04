@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi2";
 import Reveal from "./ScrollReveal";
-
 import dogImg from "../assets/dog.jpg";
 import catImg from "../assets/cat.jpg";
 import birdImg from "../assets/bird.jpg";

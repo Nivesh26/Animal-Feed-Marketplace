@@ -153,7 +153,7 @@ const ProductReview = () => {
 
         {/* ── Add Review Form Modal / Box ── */}
         {isFormOpen && (
-          <div className="mb-10 p-5 sm:p-7 rounded-2xl bg-gray-50/80 border border-gray-200/80">
+          <div className="mb-10 p-5 sm:p-7 rounded-2xl bg-white border border-gray-200/80">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-sm sm:text-base font-bold text-gray-900">
                 Share Your Experience
@@ -262,7 +262,7 @@ const ProductReview = () => {
         {/* ── Summary & Rating Breakdown Grid ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10 pb-10 border-b border-gray-100">
           {/* Overall Rating Card */}
-          <div className="lg:col-span-4 flex flex-col justify-center p-6 rounded-2xl bg-gray-50/70 border border-gray-100">
+          <div className="lg:col-span-4 flex flex-col justify-center p-6 rounded-2xl bg-white border border-gray-200/80">
             <span className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
               4.8
             </span>
@@ -328,7 +328,7 @@ const ProductReview = () => {
         {/* ── Reviews List ── */}
         <div className="space-y-4">
           {filteredReviews.length === 0 ? (
-            <div className="text-center py-12 bg-gray-50 rounded-2xl border border-gray-100 p-6">
+            <div className="text-center py-12 bg-white rounded-2xl border border-gray-200/80 p-6">
               <p className="text-sm font-semibold text-gray-700">
                 No reviews found for this filter
               </p>

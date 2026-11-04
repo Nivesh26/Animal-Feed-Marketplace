@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import ScrollToTop from './UserComponents/ScrollToTop'
 import Home from './UserPages/Home'
 import UserLogin from './Logins/UserLogin'
@@ -10,11 +10,12 @@ import Contact from './UserPages/Contact'
 import ProductDetail from './UserPages/ProductDetail'
 import Cart from './UserPages/Cart'
 
-const App = () => {
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
+    <div key={location.pathname} className="animate-page-enter">
+      <Routes location={location}>
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Products />} />
         <Route path='/categories' element={<Categories />} />
@@ -26,9 +27,17 @@ const App = () => {
         <Route path='/login' element={<UserLogin />} />
         <Route path='/signup' element={<UserSignup />} />
       </Routes>
-    </BrowserRouter>
+    </div>
+  );
+};
 
-  )
-}
+const App = () => {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <AnimatedRoutes />
+    </BrowserRouter>
+  );
+};
 
 export default App 

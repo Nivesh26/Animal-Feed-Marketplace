@@ -9,6 +9,7 @@ import BestSelling from '../UserComponents/BestSelling'
 import CTA from '../UserComponents/CTA'
 import ProductLiked from '../UserComponents/ProductLiked'
 import FAQ from '../UserComponents/Faq'
+import Reviews from '../UserComponents/Reviews'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <BestSelling />
       <CTA />
       <ProductLiked />
+      <Reviews />
       <FAQ />
       <Footer />
       <Copyright />
